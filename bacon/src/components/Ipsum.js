@@ -1,32 +1,31 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {getIpsum} from '../actions';
 import { connect } from 'react-redux';
 
 const Ipsum = props => {
-    useEffect(() => {
+    const data = e => {
+        e.preventDefault();
         props.getIpsum();
-    }, [props.getIpusm]);
-
-    if (props.isFetching) {
-        return <h2>Frying bacon...</h2>;
-    }
+    };
 
     return (
         <>
-            <h2>Bacon Ipsum: {props.ipsum}</h2>
-            <button onClick={() => props.getIpsum()}>Generate Bacon Ipsum</button>
+        {props.isFetching ? (
+            <h4>Frying bacon...</h4>
+        ): (
+            <button onClick={data}>Generate Bacon Ipsum</button>
+        )}
+        <p>{props.ipsum}</p>
         </>
-    );
-};
+    )
+}
 
 const mapStateToProps = state => {
     return {
         ipsum: state.ipsum,
         isFetching: state.isFetching,
         error: state.error
-    };
-};
+    }
+}
 
-const mapDispatchToProps = {getIpsum};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Ipsum);
+export default connect(mapStateToProps, {getIpsum})(Ipsum);
