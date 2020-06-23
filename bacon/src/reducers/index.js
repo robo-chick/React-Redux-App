@@ -1,4 +1,5 @@
 const initialState = {
+    // image: "https://baconmockup.com/600/400/",
     loading: false,
     ipsum: null,
     isFetching: false,
