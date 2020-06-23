@@ -1,7 +1,7 @@
 import {FETCHING_IPSUM_START, FETCHING_IPSUM_SUCCESS, ERROR} from '../actions';
 
 const initialState = {
-    // image: "https://baconmockup.com/600/400/",
+    image: "https://images.unsplash.com/photo-1592086326871-f7cf2f1801ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
     loading: false,
     ipsum: [],
     isFetching: false,

@@ -9,14 +9,14 @@ const Ipsum = props => {
     };
 
     return (
-        <>
-        {props.isFetching ? (
-            <h4>Frying bacon...</h4>
-        ): (
-            <button onClick={data}>Generate Bacon Ipsum</button>
-        )}
-        <p>{props.ipsum}</p>
-        </>
+        <div className="content-container">
+            {props.isFetching ? (
+                <h4>Frying up the bacon...</h4>
+            ): (
+                <button onClick={data}>Generate Bacon Ipsum</button>
+            )}
+            <p>{props.ipsum}</p>
+        </div>
     )
 }
 
