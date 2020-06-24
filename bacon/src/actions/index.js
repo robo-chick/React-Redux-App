@@ -8,7 +8,7 @@ export const getIpsum = () => dispatch => {
     dispatch({type: FETCHING_IPSUM_START});
 
     axios
-      .get("https://baconipsum.com/api/?type=meat-and-filler")
+      .get("https://baconipsum.com/api/?type=all-meat&paras=2&start-with-lorem=1")
       .then(res => {
           console.log(res.data);
           dispatch({type: FETCHING_IPSUM_SUCCESS, payload: res.data})
